@@ -43,25 +43,32 @@ class QuestionComponent extends React.Component {
                         <Grid container spacing={3} direction="row" justify="center" alignItems="center">
                             <Grid item xs={10} md={6} lg={4} >
                                 <Slider color="primary" {...this.settings}>
-                                    <div>
+
                                         <img className='responsive-img' alt="explanatory"
                                              src="https://cdn4.buysellads.net/uu/1/41312/1545083324-1539370929-mailchimp-Yellow-260x200.png"/>
-                                    </div>
-                                    <div className='responsive-img'>
-                                        <iframe width="100%" height="100%" className='responsive-img' src="https://www.youtube.com/embed/u_Nneiwgres" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                    <div>
+                                             
+                                        <div class="video-container">
+                                            <iframe width="560" height="315" 
+                                                src="https://www.youtube.com/embed/_TyJeKKQh-s?controls=0"
+                                                frameborder="0"
+                                                allow="accelerometer; autoplay;
+                                                    encrypted-media; gyroscope;
+                                                    picture-in-picture"
+                                                allowfullscreen>
+                                            </iframe>
+                                        </div>
                                         <img className='responsive-img' alt="explanatory"
                                              src="https://cdn4.buysellads.net/uu/1/41312/1545083324-1539370929-mailchimp-Yellow-260x200.png"/>
-                                    </div>
                                 </Slider>
                             </Grid>
                         </Grid>
                     </Grid>
 
                     <Grid item>
-                        <AlternativeButtons onClick={this.rightAnswerClick}
-                                            alternatives={this.props.currentQuestion.alternatives}></AlternativeButtons>
+                        <AlternativeButtons 
+                            onClick={this.rightAnswerClick}
+                            alternatives={this.props.currentQuestion.alternatives}>
+                        </AlternativeButtons>
                     </Grid>
 
                 </Grid>
