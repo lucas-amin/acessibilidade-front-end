@@ -74,7 +74,7 @@ class App extends Component {
 
                     <Switch>
                         <Route path={"/question"}>
-                            <QuestionComponent store2={this.state.currentQuestion}/>
+                            <QuestionComponent question={this.state.currentQuestion}/>
                             <Link to="">
                                 <AlternativeButtons alternative={this.state.questions} >
                                     Concept Component
@@ -82,8 +82,7 @@ class App extends Component {
                             </Link>
                         </Route>
                         <Route path={""}>
-                            <ConceptComponent/>
-
+                            <ConceptComponent concept={this.state.currentConcept}/>
                             <Link to="/question">
                                 <UnderstoodButton></UnderstoodButton>
                             </Link>

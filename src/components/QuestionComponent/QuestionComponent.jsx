@@ -3,8 +3,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import {combineReducers, createStore} from 'redux'
-import {createBrowserHistory} from "history";
-
 import {reducerQuestion} from '../../reducers/reducerQuestion'
 import {reducerLearning} from '../../reducers/reducerLearning'
 import {reducerQuestions} from '../../reducers/reducerQuestions'
@@ -29,25 +27,25 @@ export default function AlternativeButtons(alternatives) {
         <div>
             <Grid container spacing={1}>
                 <Grid item xs={6}>
-                    <Button variant="contained" color="default" style={{backgroundColor: '#dfdfdf', height: '30vh'}}
+                    <Button variant="contained" color="default" style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
                         alternative 1
                     </Button>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button variant="contained" color="default" style={{backgroundColor: '#dfdfdf', height: '30vh'}}
+                    <Button variant="contained" color="default" style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
                         Alternative 2
                     </Button>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button variant="contained" color="default" style={{backgroundColor: '#dfdfdf', height: '30vh'}}
+                    <Button variant="contained" color="default" style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
                         Alternative 3
                     </Button>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button variant="contained" color="default" style={{backgroundColor: '#dfdfdf', height: '30vh'}}
+                    <Button variant="contained" color="default" style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
                         Alternative 4
                     </Button>
@@ -58,7 +56,7 @@ export default function AlternativeButtons(alternatives) {
 }
 
 export class QuestionComponent extends React.Component {
-    constructor(store2) {
+    constructor(question) {
         super();
 
         const reducers = combineReducers({
