@@ -6,69 +6,39 @@ import {
     Route,
     Link
 } from "react-router-dom";
-
 import {createBrowserHistory} from "history";
-
-import {combineReducers, createStore} from 'redux'
+import { Provider } from 'react-redux'
 
 import {QuestionComponent} from './components/QuestionComponent/QuestionComponent'
 import AlternativeButtons from './components/QuestionComponent/QuestionComponent'
-import {ConceptComponent} from './components/ConceptComponent/ConceptComponent'
+import ConceptComponent from './components/ConceptComponent/ConceptComponent'
 import AppBarComponent from './components/AppBar/AppBar'
 import UnderstoodButton from './components/helpers/ButtonComponent/ButtonComponent'
 
-
-import {reducerQuestion} from './reducers/reducerQuestion'
-import {reducerLearning} from './reducers/reducerLearning'
-import {reducerQuestions} from './reducers/reducerQuestions'
+import store from './redux/store'
 import './style.css';
 
+import * as action from './redux/actions'
 import Button from '@material-ui/core/Button';
 
 class App extends Component {
     constructor() {
         super();
-
-        const reducers = combineReducers({
-            currentQuestion: reducerQuestion,
-            currentConcept: reducerLearning,
-            questions: reducerQuestions
+        store.subscribe((data) => {
+            console.log(store.getState().currentQuestion.title)
         })
 
-        const myStore = createStore(reducers, {
-            currentQuestion: {
-                title: "Question 1",
-                category: "Mechanics",
-                text: "What is a inclusive mechanic?"
-            },
-            currentConcept: {
-                title: "Question 1",
-                category: "Mechanics",
-                text: "What is a inclusive mechanic?"
-            },
-            questions: [
-                {
-                    title: "Question 1",
-                    category: "Mechanics",
-                    text: "What is a inclusive mechanic?",
-                    alternatives: ["option A", "option B", "option C", "option D"]
-                }]
-        })
-
-        myStore.subscribe((data) => {
-            console.log(myStore.getState().currentQuestion.title)
-        })
-        myStore.dispatch({type: "2", payload: 1})
-        myStore.dispatch({type: "3", payload: 1})
-        myStore.dispatch({type: "33", payload: 1})
+        //store.dispatch({type: "2", payload: 1})
+        store.dispatch({type: "3", payload: 1})
+        store.dispatch({type: "33", payload: 1})
 
         this.customHistory = createBrowserHistory();
-        this.state = myStore.getState();
+        this.state = store.getState();
     }
 
     render() {
         return (
-            <div>
+            <Provider store={store} >
                 <AppBarComponent></AppBarComponent>
                 <Router history={this.customHistory}>
 
@@ -76,7 +46,7 @@ class App extends Component {
                         <Route path={"/question"}>
                             <QuestionComponent question={this.state.currentQuestion}/>
                             <Link to="">
-                                <AlternativeButtons alternative={this.state.questions} >
+                                <AlternativeButtons currentQuestion={this.state.currentQuestion} alternative={this.state.questions} >
                                     Concept Component
                                 </AlternativeButtons>
                             </Link>
@@ -89,7 +59,7 @@ class App extends Component {
                         </Route>
                     </Switch>
                 </Router>
-            </div>
+            </Provider>
         );
     }
 }

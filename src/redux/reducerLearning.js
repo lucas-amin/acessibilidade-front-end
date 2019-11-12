@@ -10,8 +10,7 @@ export const reducerLearning = function(state = defaultState, action) {
     category: "Mechanics",
     text: "What is a inclusive mechanic?"
   };
-  
-  debugger;
+    
   if (action.type == "INC") {
     console.log("inc");
     currentConcept.title = "Question 2";
