@@ -4,6 +4,7 @@ const defaultState = {
   "media": "https://i.ytimg.com/vi/OOFGdRmN70k/maxresdefault.jpg",
   "category": "Narrativa",
   "intro": "Apresenta histórias e experiências que possam representar a diversidade que existe no mundo, de modo que os jogadores não se sintam excluídos ou estereotipados.",
+  // eslint-disable-next-line
   "full_explanation": "Apresenta histórias e experiências que possam representar a diversidade que existe no mundo, de modo que os jogadores não se sintam excluídos ou estereotipados. \
   \
   Exemplos de jogos que seguem esse pricipio:\
@@ -18,7 +19,7 @@ const defaultState = {
 export const reducerLearning = function(state = defaultState, action) {
   let currentConcept = {};
 
-  if (action.type == "UPDATE_CONCEPT") {
+  if (action.type === "UPDATE_CONCEPT") {
     currentConcept.id = action.payload.id;
     currentConcept.title = action.payload.title;
     currentConcept.media = action.payload.media;
@@ -27,9 +28,8 @@ export const reducerLearning = function(state = defaultState, action) {
     currentConcept.full_explanation = action.full_explanation;
 
     return currentConcept;
-  } else if (action.type == "UPDATE_CONCEPT_EXAMPLE"){
+  } else if (action.type === "UPDATE_CONCEPT_EXAMPLE"){
     Object.assign(currentConcept, state)
-    debugger
 
     currentConcept.id += 1;
     return currentConcept;

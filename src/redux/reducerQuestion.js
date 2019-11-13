@@ -11,10 +11,10 @@ export const reducerQuestion = function(state=defaultQuestion, action) {
     text: "What is a inclusive mechanic?"
   }
 
-  if(action.type == "2"){
+  if(action.type === "2"){
     currentQuestion.title = "Question 2";
     console.log("i actually did it 2")
-  }else if(action.type == "3"){
+  }else if(action.type === "3"){
     currentQuestion.title = "Question 3";
     console.log("i actually did it 3")
   }else{
