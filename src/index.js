@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {
-    BrowserRouter as Router,
+    Router,
     Switch,
     Route,
     Link
@@ -21,6 +21,9 @@ import './style.css';
 import * as action from './redux/actions'
 import Button from '@material-ui/core/Button';
 
+let browserHistory = createBrowserHistory();
+export default browserHistory;
+
 class App extends Component {
     constructor() {
         super();
@@ -32,19 +35,18 @@ class App extends Component {
         store.dispatch({type: "3", payload: 1})
         store.dispatch({type: "33", payload: 1})
 
-        this.customHistory = createBrowserHistory();
         this.state = store.getState();
     }
 
     render() {
         return (
+            <Router history={browserHistory}>
             <Provider store={store} >
+                
                 <AppBarComponent></AppBarComponent>
-                <Router history={this.customHistory}>
-
                     <Switch>
-                        <Route path={"/question"} component={QuestionComponent}>
-                            <QuestionComponent question={this.state.currentQuestion}/>
+                        <Route path={"/question"}>
+                            <QuestionComponent  question={this.state.currentQuestion}/>
                             <Link to="">
                                 <AlternativeButtons currentQuestion={this.state.currentQuestion} alternative={this.state.questions} >
                                     Concept Component
@@ -52,11 +54,12 @@ class App extends Component {
                             </Link>
                         </Route>
                         <Route path={""}>
-                            <ConceptComponent concept={this.state.currentConcept}/>
+                            <ConceptComponent browserHistory={browserHistory}></ConceptComponent>
                         </Route>
                     </Switch>
-                </Router>
+                
             </Provider>
+            </Router>
         );
     }
 }

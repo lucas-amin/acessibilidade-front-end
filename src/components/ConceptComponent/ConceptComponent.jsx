@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import styles from './ConceptComponent.css';
 import './ConceptComponent.css';
 import UnderstoodButton from './../helpers/ButtonComponent/ButtonComponent'
+import browserHistory from './../../index'
 import { useHistory } from "react-router-dom";
 
 import { connect } from 'react-redux'
@@ -21,10 +22,9 @@ class ConceptComponent extends React.Component {
     }
 
     onUnderstoodClick = () => {
-        console.log("clicked")
         this.props.dispatch(action.setCurrentConceptExample()) 
         if(this.props.concept.id == 2){
-            window.location.assign("/question")
+            this.props.browserHistory.push('/question')
         }
     }
 
