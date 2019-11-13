@@ -13,13 +13,9 @@ import {QuestionComponent} from './components/QuestionComponent/QuestionComponen
 import AlternativeButtons from './components/QuestionComponent/QuestionComponent'
 import ConceptComponent from './components/ConceptComponent/ConceptComponent'
 import AppBarComponent from './components/AppBar/AppBar'
-import UnderstoodButton from './components/helpers/ButtonComponent/ButtonComponent'
 
 import store from './redux/store'
 import './style.css';
-
-import * as action from './redux/actions'
-import Button from '@material-ui/core/Button';
 
 let browserHistory = createBrowserHistory();
 export default browserHistory;

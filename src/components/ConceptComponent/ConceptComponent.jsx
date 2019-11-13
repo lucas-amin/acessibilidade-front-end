@@ -1,29 +1,21 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import styles from './ConceptComponent.css';
 import './ConceptComponent.css';
 import UnderstoodButton from './../helpers/ButtonComponent/ButtonComponent'
-import browserHistory from './../../index'
-import { useHistory } from "react-router-dom";
 
 import { connect } from 'react-redux'
 import * as action from './../../redux/actions'
 
 class ConceptComponent extends React.Component {
-    constructor() {
-        super();
-    }
- 
     componentDidMount(){
         this.props.dispatch(action.setCurrentQuestion())    
     }
 
     onUnderstoodClick = () => {
         this.props.dispatch(action.setCurrentConceptExample()) 
-        if(this.props.concept.id == 2){
+        if(this.props.concept.id === 2){
             this.props.browserHistory.push('/question')
         }
     }
@@ -37,7 +29,7 @@ class ConceptComponent extends React.Component {
                     <Grid item xs={3}>
                     </Grid>
                     <Grid item xs={6}>
-                    <img class='responsive-img' alt="description-image" src={this.props.concept.media}/>
+                    <img class='responsive-img' alt="explanatory" src={this.props.concept.media}/>
                     </Grid>
                     <Grid item xs={3}>
                     </Grid>

@@ -2,7 +2,7 @@ import {reducerQuestion} from './reducerQuestion'
 import {reducerLearning} from './reducerLearning'
 import {reducerQuestions} from './reducerQuestions'
 
-import {combineReducers, applyMiddleware, createStore} from 'redux'
+import {combineReducers, createStore} from 'redux'
 
 const reducers = combineReducers({  
   currentQuestion: reducerQuestion,

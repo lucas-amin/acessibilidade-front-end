@@ -53,9 +53,6 @@ export default function AlternativeButtons(props) {
 }
 
 export class QuestionComponent extends React.Component {
-    constructor() {
-        super();
-    }
 
     render() {
         return (
