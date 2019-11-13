@@ -2,36 +2,21 @@
  * action types
  */
 
-export const ADD_TODO = '2'
-export const TOGGLE_TODO = 'TOGGLE_TODO'
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
-
-/*
- * other constants
- */
-
-export const VisibilityFilters = {
-  SHOW_ALL: 'SHOW_ALL',
-  SHOW_COMPLETED: 'SHOW_COMPLETED',
-  SHOW_ACTIVE: 'SHOW_ACTIVE'
-}
+export const UPDATE_QUESTION = 'UPDATE_QUESTION'
+export const UPDATE_CONCEPT = 'UPDATE_CONCEPT'
 
 /*
  * action creators
  */
 
 export function setCurrentQuestion(text) {
-  return { type: ADD_TODO, text }
+  return { type: UPDATE_QUESTION, text }
 }
 
-export function addTodo(text) {
-  return { type: ADD_TODO, text }
+export function setCurrentConcept(concept) {
+  return { type: UPDATE_CONCEPT, concept: concept }
 }
 
-export function toggleTodo(index) {
-  return { type: TOGGLE_TODO, index }
-}
-
-export function setVisibilityFilter(filter) {
-  return { type: SET_VISIBILITY_FILTER, filter }
+export function setCurrentConceptExample() {
+  return { type: 'UPDATE_CONCEPT_EXAMPLE' }
 }

@@ -12,10 +12,10 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function UnderstoodButton() {
+export default function UnderstoodButton(props) {
   const classes = useStyles();
   return(
-    <Button color="primary" variant="contained" className={classes.button}>
+    <Button onClick={props.onClick} color="primary" variant="contained" className={classes.button}>
         Okay, alles klar
     </Button>
   )

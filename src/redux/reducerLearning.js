@@ -1,6 +1,7 @@
 const defaultState = {
+  "id": 0,
   "title": "Narrativa",
-  "media": "link",
+  "media": "https://i.ytimg.com/vi/OOFGdRmN70k/maxresdefault.jpg",
   "category": "Narrativa",
   "intro": "Apresenta histórias e experiências que possam representar a diversidade que existe no mundo, de modo que os jogadores não se sintam excluídos ou estereotipados.",
   "full_explanation": "Apresenta histórias e experiências que possam representar a diversidade que existe no mundo, de modo que os jogadores não se sintam excluídos ou estereotipados. \
@@ -18,12 +19,19 @@ export const reducerLearning = function(state = defaultState, action) {
   let currentConcept = {};
 
   if (action.type == "UPDATE_CONCEPT") {
+    currentConcept.id = action.payload.id;
     currentConcept.title = action.payload.title;
     currentConcept.media = action.payload.media;
     currentConcept.category = action.payload.category;
     currentConcept.intro = action.intro;
     currentConcept.full_explanation = action.full_explanation;
 
+    return currentConcept;
+  } else if (action.type == "UPDATE_CONCEPT_EXAMPLE"){
+    Object.assign(currentConcept, state)
+    debugger
+
+    currentConcept.id += 1;
     return currentConcept;
   }
 

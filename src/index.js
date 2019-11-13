@@ -43,7 +43,7 @@ class App extends Component {
                 <Router history={this.customHistory}>
 
                     <Switch>
-                        <Route path={"/question"}>
+                        <Route path={"/question"} component={QuestionComponent}>
                             <QuestionComponent question={this.state.currentQuestion}/>
                             <Link to="">
                                 <AlternativeButtons currentQuestion={this.state.currentQuestion} alternative={this.state.questions} >
@@ -53,9 +53,6 @@ class App extends Component {
                         </Route>
                         <Route path={""}>
                             <ConceptComponent concept={this.state.currentConcept}/>
-                            <Link to="/question">
-                                <UnderstoodButton></UnderstoodButton>
-                            </Link>
                         </Route>
                     </Switch>
                 </Router>

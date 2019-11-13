@@ -20,5 +20,6 @@ export const reducerQuestion = function(state=defaultQuestion, action) {
   }else{
     currentQuestion.title = "Question 4";
   }
+
   return currentQuestion;
 }
