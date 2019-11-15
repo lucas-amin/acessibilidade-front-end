@@ -7,7 +7,7 @@ import {
     Link
 } from "react-router-dom";
 import {createBrowserHistory} from "history";
-import { Provider } from 'react-redux'
+import {Provider} from 'react-redux'
 
 import {QuestionComponent} from './components/QuestionComponent/QuestionComponent'
 import AlternativeButtons from './components/QuestionComponent/QuestionComponent'
@@ -35,16 +35,18 @@ class App extends Component {
     }
 
     render() {
+        debugger;
         return (
             <Router history={browserHistory}>
-            <Provider store={store} >
-                
-                <AppBarComponent></AppBarComponent>
+                <Provider store={store}>
+
+                    <AppBarComponent></AppBarComponent>
                     <Switch>
                         <Route path={"/question"}>
-                            <QuestionComponent  question={this.state.currentQuestion}/>
+                            <QuestionComponent browserHistory={browserHistory}/>
                             <Link to="">
-                                <AlternativeButtons currentQuestion={this.state.currentQuestion} alternative={this.state.questions} >
+                                <AlternativeButtons currentQuestion={this.state.currentQuestion}
+                                                    alternative={this.state.questions}>
                                     Concept Component
                                 </AlternativeButtons>
                             </Link>
@@ -53,8 +55,7 @@ class App extends Component {
                             <ConceptComponent browserHistory={browserHistory}></ConceptComponent>
                         </Route>
                     </Switch>
-                
-            </Provider>
+                </Provider>
             </Router>
         );
     }

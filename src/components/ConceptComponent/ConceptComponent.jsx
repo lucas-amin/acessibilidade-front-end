@@ -5,22 +5,23 @@ import Grid from '@material-ui/core/Grid';
 import './ConceptComponent.css';
 import UnderstoodButton from './../helpers/ButtonComponent/ButtonComponent'
 
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 import * as action from './../../redux/actions'
 
 class ConceptComponent extends React.Component {
-    componentDidMount(){
-        this.props.dispatch(action.setCurrentQuestion())    
+    componentDidMount() {
+        this.props.dispatch(action.setCurrentQuestion())
     }
 
     onUnderstoodClick = () => {
-        this.props.dispatch(action.setCurrentConceptExample()) 
-        if(this.props.concept.id === 2){
+        this.props.dispatch(action.setCurrentConceptExample())
+        if (this.props.concept.id === 2) {
             this.props.browserHistory.push('/question')
         }
     }
 
     render() {
+        debugger;
         return (
             <React.Fragment>
                 <CssBaseline/>
@@ -29,23 +30,23 @@ class ConceptComponent extends React.Component {
                     <Grid item xs={3}>
                     </Grid>
                     <Grid item xs={6}>
-                    <img class='responsive-img' alt="explanatory" src={this.props.concept.media}/>
+                        <img class='responsive-img' alt="explanatory" src={this.props.concept.media}/>
                     </Grid>
                     <Grid item xs={3}>
                     </Grid>
                 </Grid>
                 <Typography component="div" style={{backgroundColor: '#cfe8fc'}}>
-                        {this.props.concept.intro} <br></br> <br></br>
-                        {this.props.concept.full_explanation}
-                    </Typography>
-                    <UnderstoodButton onClick={this.onUnderstoodClick}></UnderstoodButton>
+                    {this.props.concept.intro} <br></br> <br></br>
+                    {this.props.concept.full_explanation}
+                </Typography>
+                <UnderstoodButton onClick={this.onUnderstoodClick}></UnderstoodButton>
             </React.Fragment>
         )
     }
 }
 
-function mapStateToProps (store) {
-    return({
+function mapStateToProps(store) {
+    return ({
         concept: store.currentConcept
     })
 }
