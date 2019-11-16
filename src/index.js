@@ -9,11 +9,11 @@ import {
 import {createBrowserHistory} from "history";
 import {Provider} from 'react-redux'
 
-import {QuestionComponent} from './components/QuestionComponent/QuestionComponent'
-import AlternativeButtons from './components/QuestionComponent/QuestionComponent'
+import QuestionComponent from './components/QuestionComponent/QuestionComponent'
 import ConceptComponent from './components/ConceptComponent/ConceptComponent'
-import AppBarComponent from './components/AppBar/AppBar'
+import MenuComponent from './components/MenuComponent/MenuComponent'
 
+import AppBarComponent from './components/AppBar/AppBar'
 import store from './redux/store'
 import './style.css';
 
@@ -35,24 +35,20 @@ class App extends Component {
     }
 
     render() {
-        debugger;
         return (
             <Router history={browserHistory}>
                 <Provider store={store}>
-
                     <AppBarComponent></AppBarComponent>
                     <Switch>
                         <Route path={"/question"}>
-                            <QuestionComponent browserHistory={browserHistory}/>
-                            <Link to="">
-                                <AlternativeButtons currentQuestion={this.state.currentQuestion}
-                                                    alternative={this.state.questions}>
-                                    Concept Component
-                                </AlternativeButtons>
-                            </Link>
+                            <QuestionComponent currentQuestion={this.state.currentQuestion}
+                                browserHistory={browserHistory}> </QuestionComponent>
+                        </Route>
+                        <Route path={"/concept"}>
+                            <ConceptComponent browserHistory={browserHistory}/>
                         </Route>
                         <Route path={""}>
-                            <ConceptComponent browserHistory={browserHistory}></ConceptComponent>
+                            <MenuComponent browserHistory={browserHistory}/>
                         </Route>
                     </Switch>
                 </Provider>

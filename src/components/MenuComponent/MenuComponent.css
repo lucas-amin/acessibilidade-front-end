@@ -1,0 +1,12 @@
+.bigblue {
+  color: DodgerBlue;
+  padding: 3px;
+  font-family: Arial;
+  text-align: center;
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+}
+

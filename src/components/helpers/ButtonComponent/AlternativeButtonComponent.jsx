@@ -14,36 +14,37 @@ const useStyles = makeStyles(theme => ({
 
 export default function AlternativeButtons(props) {
     const classes = useStyles();
+    debugger;
 
     return (
         <div>
             <Grid container spacing={1}>
                 <Grid item xs={6}>
-                    <Button variant="contained" color="default"
+                    <Button onClick={props.onClick} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
-                        Alternative 1
+                        {props.alternatives.A}
                     </Button>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button variant="contained" color="default"
+                    <Button onClick={props.onClick} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
-                        Alternative 2
+                        {props.alternatives.B}
                     </Button>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button variant="contained" color="default"
+                    <Button onClick={props.onClick} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
-                        Alternative 3
+                        {props.alternatives.C}
                     </Button>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button variant="contained" color="default"
+                    <Button onClick={props.onClick} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
-                        Alternative 4
+                        {props.alternatives.D}
                     </Button>
                 </Grid>
             </Grid>
