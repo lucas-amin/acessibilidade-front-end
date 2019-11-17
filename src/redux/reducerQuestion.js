@@ -1,36 +1,36 @@
 const defaultQuestion = {
-    title: "Question 1",
-    category: "Mechanics",
-    text: "What is a inclusive mechanic?",
+    title: "Questão 1",
+    category: "Narrativa",
+    text: "Qual desses personagens desses jogos tem elementos inclusivos em sua narrativa?",
     alternatives: {
-        "A": "Alternative A",
-        "B": "Alternative B",
-        "C": "Alternative C",
-        "D": "Alternative D"
+        "A": "Mass Effect: Com o personagem com a síndrome que causa extrema fragilidade nos ossos ",
+        "B": "Megamen X: com o menino ciborgue",
+        "C": "Witcher 3: Com o personagem principal sendo um caçador de monstros",
+        "D": "Batman Arkham Knight: Com o personagem principal que combate o crime"
     }
 }
 
 export const reducerQuestion = function (state = defaultQuestion, action) {
     let currentQuestion = {
-        title: "Question 1",
-        category: "Mechanics",
-        text: "What is a inclusive mechanic?",
+        title: "Questão 1",
+        category: "Narrativa",
+        text: "Qual desses personagens desses jogos tem elementos inclusivos em sua narrativa?",
         alternatives: {
-            "A": "Alternative A",
-            "B": "Alternative B",
-            "C": "Alternative C",
-            "D": "Alternative D"
+            "A": "Mass Effect: Com o personagem com a síndrome que causa extrema fragilidade nos ossos ",
+            "B": "Megamen X: com o menino ciborgue",
+            "C": "Witcher 3: Com o personagem principal sendo um caçador de monstros",
+            "D": "Batman Arkham Knight: Com o personagem principal que combate o crime"
         }
     }
 
     if (action.type === "2") {
-        currentQuestion.title = "Question 2";
+        currentQuestion.title = "Questão 2";
         console.log("i actually did it 2")
     } else if (action.type === "3") {
-        currentQuestion.title = "Question 3";
+        currentQuestion.title = "Questão 3";
         console.log("i actually did it 3")
     } else {
-        currentQuestion.title = "Question 4";
+        currentQuestion.title = "Questão 4";
     }
 
     return currentQuestion;

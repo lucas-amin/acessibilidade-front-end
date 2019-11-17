@@ -24,7 +24,7 @@ export default function MenuButtons(props) {
                     <IconButton onClick={props.onClick} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
-                        Concept A
+                        {props.concepts.title}
                     </IconButton>
                 </Grid>
                 <Grid item xs={6}>

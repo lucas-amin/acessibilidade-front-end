@@ -27,9 +27,7 @@ class App extends Component {
             console.log(store.getState().currentQuestion.title)
         })
 
-        //store.dispatch({type: "2", payload: 1})
-        store.dispatch({type: "3", payload: 1})
-        store.dispatch({type: "33", payload: 1})
+        store.dispatch({type: "1", payload: 1})
 
         this.state = store.getState();
     }

@@ -17,7 +17,7 @@ class MenuComponent extends React.Component {
             <React.Fragment>
                 <CssBaseline/>
                 <h1 class='bigblue'> Menu principal</h1>
-                <MenuButtons onClick={this.onUnderstoodClick}></MenuButtons>
+                <MenuButtons onClick={this.onUnderstoodClick} concepts={this.props.concepts}></MenuButtons>
             </React.Fragment>
         )
     }
@@ -25,7 +25,7 @@ class MenuComponent extends React.Component {
 
 function mapStateToProps(store) {
     return ({
-        menu: store
+        concepts: store.currentConcept
     })
 }
 
