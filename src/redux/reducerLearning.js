@@ -55,16 +55,16 @@ const concepts = {
  }
 }
 
-export const reducerLearning = function(state = defaultState, action) {
-  let currentConcept = {};
+export const reducerLearning = function (state = defaultState, action) {
+    let currentConcept = {};
 
-  if (action.type === "UPDATE_CONCEPT") {
-    currentConcept.id = action.payload.id;
-    currentConcept.title = action.payload.title;
-    currentConcept.media = action.payload.media;
-    currentConcept.category = action.payload.category;
-    currentConcept.intro = action.intro;
-    currentConcept.full_explanation = action.full_explanation;
+    if (action.type === "UPDATE_CONCEPT") {
+        currentConcept.id = action.payload.id;
+        currentConcept.title = action.payload.title;
+        currentConcept.media = action.payload.media;
+        currentConcept.category = action.payload.category;
+        currentConcept.intro = action.intro;
+        currentConcept.full_explanation = action.full_explanation;
 
     return currentConcept;
   } else if (action.type === "UPDATE_CONCEPT_TYPE"){
@@ -74,9 +74,9 @@ export const reducerLearning = function(state = defaultState, action) {
     debugger
     Object.assign(currentConcept, state)
 
-    currentConcept.id += 1;
-    return currentConcept;
-  }
+        currentConcept.id += 1;
+        return currentConcept;
+    }
 
-  return defaultState;
+    return defaultState;
 };

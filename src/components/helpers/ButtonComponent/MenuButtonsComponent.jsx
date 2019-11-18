@@ -38,30 +38,30 @@ export default function MenuButtons(props) {
                     <IconButton onClick={props.onClick} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
-                        Concept C
+                        Mecanicas
                     </IconButton>
                 </Grid>
                 <Grid item >
                     <IconButton onClick={props.onClick} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
-                        Concept D
+                        Objetivos
                     </IconButton>
                 </Grid>
             </Grid>
             <Grid container direction="row" justify="space-around" alignItems="center" spacing={1}>
                 <Grid item >
                     <IconButton onClick={props.onClick} variant="contained" color="default"
-                            style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
-                            className={classes.button}>
-                        Concept F
+                                style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
+                                className={classes.button}>
+                        Tecnologia
                     </IconButton>
                 </Grid>
                 <Grid item >
                     <IconButton onClick={props.onClick} variant="contained" color="default"
-                            style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
-                            className={classes.button}>
-                        Concept G
+                                style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
+                                className={classes.button}>
+                        Elementos visuais (E.V.A.Hs)
                     </IconButton>
                 </Grid>
             </Grid>
