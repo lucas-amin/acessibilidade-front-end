@@ -38,7 +38,10 @@ class ConceptComponent extends React.Component {
                     <Grid item xs={3}>
                     </Grid>
                 </Grid>
-                <Typography component="div" style={{backgroundColor: '#cfe8fc'}}>
+                <Typography component="div" 
+                    style={{backgroundColor: '#cfe8fc',
+                            whiteSpace: 'pre-line',
+                            fontSize: '2em'}}>
                     {this.props.concept.intro} <br></br> <br></br>
                     {this.props.concept.full_explanation}
                 </Typography>
