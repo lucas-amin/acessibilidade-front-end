@@ -10,4 +10,13 @@ const reducers = combineReducers({
   questions: reducerQuestions
 })
 
-export default createStore(reducers)
+const store = createStore(reducers)
+
+store.subscribe( () => {
+  console.log('state\n', store.getState());
+  var test = store.getState()
+  
+  debugger;
+});
+
+export default store

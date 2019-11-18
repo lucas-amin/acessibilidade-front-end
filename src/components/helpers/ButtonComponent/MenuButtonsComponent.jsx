@@ -15,23 +15,21 @@ const useStyles = makeStyles(theme => ({
 
 export default function MenuButtons(props) {
     const classes = useStyles();
-    debugger;
-
     return (
         <div>
             <Grid container direction="row" justify="space-around" alignItems="center" spacing={1}>
                 <Grid item >
-                    <IconButton onClick={props.onClick} variant="contained" color="default"
+                    <IconButton onClick={() => props.onClick("narrativa")} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
                         {props.concepts.title}
                     </IconButton>
                 </Grid>
                 <Grid item >
-                    <IconButton onClick={props.onClick} variant="contained" color="default"
+                    <IconButton onClick={() => props.onClick("tecnologia")} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
-                        Concept B
+                        Tecnologia
                     </IconButton>
                 </Grid>
             </Grid>
@@ -51,33 +49,19 @@ export default function MenuButtons(props) {
                     </IconButton>
                 </Grid>
             </Grid>
-            <Grid>
-                <Grid item xs={6}>
+            <Grid container direction="row" justify="space-around" alignItems="center" spacing={1}>
+                <Grid item >
                     <IconButton onClick={props.onClick} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
                         Concept F
                     </IconButton>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item >
                     <IconButton onClick={props.onClick} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
                         Concept G
-                    </IconButton>
-                </Grid>
-                <Grid item xs={6}>
-                    <IconButton onClick={props.onClick} variant="contained" color="default"
-                            style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
-                            className={classes.button}>
-                        Concept H
-                    </IconButton>
-                </Grid>
-                <Grid item xs={6}>
-                    <IconButton onClick={props.onClick} variant="contained" color="default"
-                            style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
-                            className={classes.button}>
-                        Concept I
                     </IconButton>
                 </Grid>
             </Grid>

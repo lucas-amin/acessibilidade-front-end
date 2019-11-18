@@ -27,8 +27,6 @@ class App extends Component {
             console.log(store.getState().currentQuestion.title)
         })
 
-        store.dispatch({type: "1", payload: 1})
-
         this.state = store.getState();
     }
 

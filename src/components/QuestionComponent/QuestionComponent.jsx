@@ -5,7 +5,10 @@ import Box from '@material-ui/core/Box';
 import '../../style.css';
 import AlternativeButtons from '../helpers/ButtonComponent/AlternativeButtonComponent'
 
-export default class QuestionComponent extends React.Component {
+import {connect} from 'react-redux'
+import * as action from './../../redux/actions'
+
+class QuestionComponent extends React.Component {
     constructor() {
         super();
     }
@@ -20,8 +23,8 @@ export default class QuestionComponent extends React.Component {
                 <CssBaseline/>
                 <h1> {this.props.currentQuestion.title} - {this.props.currentQuestion.category} </h1>
                 <Box textAlign="center">
-                    <Typography component="div" style={{backgroundColor: '#cfe8fc', height: '5vh'}}>
-                      {this.props.currentQuestion.text}
+                    <Typography component="div" style={{backgroundColor: '#cfe8fc'}}>
+                    <h1> {this.props.currentQuestion.text} </h1>
                     </Typography>
                 </Box>
                 <AlternativeButtons onClick={this.rightAnswerClick} alternatives={this.props.currentQuestion.alternatives}></AlternativeButtons>
@@ -30,11 +33,10 @@ export default class QuestionComponent extends React.Component {
     }
 }
 
-// function mapStateToProps(store) {
-//     debugger;
-//     return ({
-//         question: store.currentQuestion
-//     })
-// }
-//
-// export default connect(mapStateToProps)(QuestionComponent)
+function mapStateToProps(store) {
+    return ({
+        currentQuestion: store.currentQuestion
+    })
+}
+
+export default connect(mapStateToProps)(QuestionComponent)

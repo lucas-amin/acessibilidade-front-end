@@ -10,18 +10,21 @@ import * as action from './../../redux/actions'
 
 class ConceptComponent extends React.Component {
     componentDidMount() {
-        this.props.dispatch(action.setCurrentQuestion())
+        //this.props.dispatch(action.setCurrentQuestion())
     }
 
     onUnderstoodClick = () => {
-        this.props.dispatch(action.setCurrentConceptExample())
         if (this.props.concept.id === 2) {
+            var lowerCaseTitle = this.props.concept.title.toLowerCase()
+            debugger
+            this.props.dispatch(action.setCurrentQuestionType(lowerCaseTitle))
             this.props.browserHistory.push('/question')
+        }else{
+            this.props.dispatch(action.setCurrentConceptExample())
         }
     }
 
     render() {
-        debugger;
         return (
             <React.Fragment>
                 <CssBaseline/>

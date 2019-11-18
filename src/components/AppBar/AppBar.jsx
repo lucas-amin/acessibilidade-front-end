@@ -32,7 +32,6 @@ export default function AppBarComponent() {
           <Typography variant="h6" className={classes.title}>
             Gaming Acessível
           </Typography>
-          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </div>

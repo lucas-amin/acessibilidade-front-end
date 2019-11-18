@@ -13,7 +13,7 @@ export default function UnderstoodButton(props) {
     const classes = useStyles();
     return (
         <Button onClick={props.onClick} color="primary" variant="contained" className={classes.button}>
-            Okay, alles klar
+            Ok, entendi
         </Button>
     )
 }
