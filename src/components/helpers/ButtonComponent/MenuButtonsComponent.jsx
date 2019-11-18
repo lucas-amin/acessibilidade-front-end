@@ -19,35 +19,39 @@ export default function MenuButtons(props) {
 
     return (
         <div>
-            <Grid container spacing={1}>
-                <Grid item xs={6}>
+            <Grid container direction="row" justify="space-around" alignItems="center" spacing={1}>
+                <Grid item >
                     <IconButton onClick={props.onClick} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
                         {props.concepts.title}
                     </IconButton>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item >
                     <IconButton onClick={props.onClick} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
                         Concept B
                     </IconButton>
                 </Grid>
-                <Grid item xs={6}>
+            </Grid>
+            <Grid container direction="row" justify="space-around" alignItems="center" spacing={1}>
+                <Grid item>
                     <IconButton onClick={props.onClick} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
                         Concept C
                     </IconButton>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item >
                     <IconButton onClick={props.onClick} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
                         Concept D
                     </IconButton>
                 </Grid>
+            </Grid>
+            <Grid>
                 <Grid item xs={6}>
                     <IconButton onClick={props.onClick} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
