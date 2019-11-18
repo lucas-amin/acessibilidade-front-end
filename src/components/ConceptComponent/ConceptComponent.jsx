@@ -2,11 +2,13 @@ import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import * as action from './../../redux/actions'
+
 import './ConceptComponent.css';
 import UnderstoodButton from './../helpers/ButtonComponent/ButtonComponent'
 
 import {connect} from 'react-redux'
-import * as action from './../../redux/actions'
+import Box from '@material-ui/core/Box';
 
 class ConceptComponent extends React.Component {
     componentDidMount() {
@@ -25,21 +27,36 @@ class ConceptComponent extends React.Component {
         return (
             <React.Fragment>
                 <CssBaseline/>
-                <h1 class='bigblue'> {this.props.concept.title + " " + this.props.concept.id}</h1>
-                <Grid container spacing={0}>
-                    <Grid item xs={3}>
+                <Grid container direction="column" justify="center" alignItems="center" spacing={3}>
+
+                    <Grid item>
+                        <h1 class='bigblue'> {this.props.concept.title + " " + this.props.concept.id}</h1>
                     </Grid>
-                    <Grid item xs={6}>
-                        <img class='responsive-img' alt="explanatory" src={this.props.concept.media}/>
+
+                    <Grid item>
+                        <Grid container spacing={0}>
+                            <Grid item xs={3}>
+                            </Grid>
+                            <Grid item xs={6}>
+                                <img class='responsive-img' alt="explanatory" src={this.props.concept.media}/>
+                            </Grid>
+                            <Grid item xs={3}>
+                            </Grid>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={3}>
+
+                    <Grid item>
+                        <Box mx="auto" bgcolor="background.paper" p={4}>
+                            <Typography component="div" style={{backgroundColor: '#cfe8fc', whiteSpace: 'pre-line'}}>
+                                {this.props.concept.intro} <br></br> <br></br>
+                                {this.props.concept.full_explanation}
+                            </Typography>
+                        </Box>
+
+                        <UnderstoodButton onClick={this.onUnderstoodClick}></UnderstoodButton>
                     </Grid>
+
                 </Grid>
-                <Typography component="div" style={{backgroundColor: '#cfe8fc'}}>
-                    {this.props.concept.intro} <br></br> <br></br>
-                    {this.props.concept.full_explanation}
-                </Typography>
-                <UnderstoodButton onClick={this.onUnderstoodClick}></UnderstoodButton>
             </React.Fragment>
         )
     }

@@ -24,13 +24,13 @@ export const reducerQuestion = function (state = defaultQuestion, action) {
     }
 
     if (action.type === "2") {
-        currentQuestion.title = "Questão 2";
+        currentQuestion.title = "Questão 1";
         console.log("i actually did it 2")
     } else if (action.type === "3") {
-        currentQuestion.title = "Questão 3";
+        currentQuestion.title = "Questão 1";
         console.log("i actually did it 3")
     } else {
-        currentQuestion.title = "Questão 4";
+        currentQuestion.title = "Questão 1";
     }
 
     return currentQuestion;

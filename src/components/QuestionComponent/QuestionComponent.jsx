@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import '../../style.css';
 import AlternativeButtons from '../helpers/ButtonComponent/AlternativeButtonComponent'
+import Grid from "@material-ui/core/Grid";
 
 export default class QuestionComponent extends React.Component {
     constructor() {
@@ -17,14 +18,27 @@ export default class QuestionComponent extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <CssBaseline/>
-                <h1> {this.props.currentQuestion.title} - {this.props.currentQuestion.category} </h1>
-                <Box textAlign="center">
-                    <Typography component="div" style={{backgroundColor: '#cfe8fc', height: '5vh'}}>
-                      {this.props.currentQuestion.text}
-                    </Typography>
-                </Box>
-                <AlternativeButtons onClick={this.rightAnswerClick} alternatives={this.props.currentQuestion.alternatives}></AlternativeButtons>
+                <Grid container direction="column" spacing={3}>
+                    <Grid item>
+                        <CssBaseline/>
+                        <h1> {this.props.currentQuestion.title} - {this.props.currentQuestion.category} </h1>
+                    </Grid>
+
+                    <Grid item>
+                        <Box textAlign="center">
+                            <Typography variant='h5' component="div" align='center'
+                                        style={{backgroundColor: '#cfe8fc'}}>
+                                {this.props.currentQuestion.text}
+                            </Typography>
+                        </Box>
+                    </Grid>
+
+                    <Grid item>
+                        <AlternativeButtons onClick={this.rightAnswerClick}
+                                            alternatives={this.props.currentQuestion.alternatives}></AlternativeButtons>
+                    </Grid>
+
+                </Grid>
             </React.Fragment>
         )
     }
