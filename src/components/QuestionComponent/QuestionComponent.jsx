@@ -6,7 +6,10 @@ import '../../style.css';
 import AlternativeButtons from '../helpers/ButtonComponent/AlternativeButtonComponent'
 import Grid from "@material-ui/core/Grid";
 
-export default class QuestionComponent extends React.Component {
+import {connect} from 'react-redux'
+import * as action from './../../redux/actions'
+
+class QuestionComponent extends React.Component {
     constructor() {
         super();
     }
@@ -44,11 +47,10 @@ export default class QuestionComponent extends React.Component {
     }
 }
 
-// function mapStateToProps(store) {
-//     debugger;
-//     return ({
-//         question: store.currentQuestion
-//     })
-// }
-//
-// export default connect(mapStateToProps)(QuestionComponent)
+function mapStateToProps(store) {
+    return ({
+        currentQuestion: store.currentQuestion
+    })
+}
+
+export default connect(mapStateToProps)(QuestionComponent)

@@ -5,14 +5,17 @@ import MenuButtons from './../helpers/ButtonComponent/MenuButtonsComponent'
 import {connect} from 'react-redux'
 import Lifecycle from "react-router/modules/Lifecycle";
 import {Link} from "react-router-dom";
+import * as action from './../../redux/actions'
 
 class MenuComponent extends React.Component {
-    onUnderstoodClick = () => {
+    onUnderstoodClick = (category) => {
         this.props.browserHistory.push("/concept")
+        
+        this.props.dispatch(action.setCurrentConceptType(category))
+        //this.props.dispatch(action.setCurrentQuestionType(category))
     }
 
     render() {
-        debugger;
         return (
             <React.Fragment>
                 <CssBaseline/>

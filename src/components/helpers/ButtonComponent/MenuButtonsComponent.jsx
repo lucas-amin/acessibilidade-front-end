@@ -15,23 +15,21 @@ const useStyles = makeStyles(theme => ({
 
 export default function MenuButtons(props) {
     const classes = useStyles();
-    debugger;
-
     return (
         <div>
             <Grid container direction="row" justify="space-around" alignItems="center" spacing={1}>
                 <Grid item >
-                    <IconButton onClick={props.onClick} variant="contained" color="default"
+                    <IconButton onClick={() => props.onClick("narrativa")} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
                         {props.concepts.title}
                     </IconButton>
                 </Grid>
                 <Grid item >
-                    <IconButton onClick={props.onClick} variant="contained" color="default"
+                    <IconButton onClick={() => props.onClick("tecnologia")} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                             className={classes.button}>
-                        Regras
+                        Tecnologia
                     </IconButton>
                 </Grid>
             </Grid>
@@ -52,7 +50,7 @@ export default function MenuButtons(props) {
                 </Grid>
             </Grid>
             <Grid container direction="row" justify="space-around" alignItems="center" spacing={1}>
-                <Grid item>
+                <Grid item >
                     <IconButton onClick={props.onClick} variant="contained" color="default"
                                 style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                                 className={classes.button}>

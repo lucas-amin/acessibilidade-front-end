@@ -22,14 +22,20 @@ export default function AlternativeButtons(props) {
                 <Grid container direction="row" justify="space-around" alignItems="center" spacing={1}>
                     <Grid item>
                         <Button onClick={props.onClick} variant="contained" color="default"
-                                style={{backgroundColor: '#dfdfdf', height: '25vh', width: '25vh'}}
+                                style={{backgroundColor: '#dfdfdf',
+                                        height: '25vh',
+                                        width: '25vh',
+                                        fontSize: '1.5em',
+                                        fontWeight: 'bold'}}
                                 className={classes.button}>
                             {props.alternatives.A}
                         </Button>
                     </Grid>
                     <Grid item>
                         <Button onClick={props.onClick} variant="contained" color="default"
-                                style={{backgroundColor: '#dfdfdf', height: '25vh', width: '25vh'}}
+                                style={{backgroundColor: '#dfdfdf', height: '25vh', width: '25vh',
+                                fontSize: '1.5em',
+                                        fontWeight: 'bold'}}
                                 className={classes.button}>
                             {props.alternatives.B}
                         </Button>
@@ -38,14 +44,18 @@ export default function AlternativeButtons(props) {
                 <Grid container direction="row" justify="space-around" alignItems="center" spacing={1}>
                     <Grid item>
                         <Button onClick={props.onClick} variant="contained" color="default"
-                                style={{backgroundColor: '#dfdfdf', height: '25vh', width: '25vh'}}
+                                style={{backgroundColor: '#dfdfdf', height: '25vh', width: '25vh',
+                                fontSize: '1.5em',
+                                        fontWeight: 'bold'}}
                                 className={classes.button}>
                             {props.alternatives.C}
                         </Button>
                     </Grid>
                     <Grid item>
                         <Button onClick={props.onClick} variant="contained" color="default"
-                                style={{backgroundColor: '#dfdfdf', height: '25vh', width: '25vh'}}
+                                style={{backgroundColor: '#dfdfdf', height: '25vh', width: '25vh',
+                                fontSize: '1.5em',
+                                        fontWeight: 'bold'}}
                                 className={classes.button}>
                             {props.alternatives.D}
                         </Button>
