@@ -48,15 +48,21 @@ class ConceptComponent extends React.Component {
                         </Grid>
                     </Grid>
 
-                    <Grid item>
-                        <Box mx="auto" bgcolor="background.paper" p={4}>
-                            <Typography component="div" style={{backgroundColor: '#cfe8fc', whiteSpace: 'pre-line'}}>
+                    <Grid container direction="row" justify="center" alignItems="center" spacing={3}>
+                    <Grid xs={9} item>
+                        <Box width={1} bgcolor="background.paper" p={4}>
+                            <Typography component="div" 
+                            style={{backgroundColor: '#cfe8fc',
+                                    whiteSpace: 'pre-line',
+                                    width: '100%',
+                                    fontSize: '2em'}}>
                                 {this.props.concept.intro} <br></br> <br></br>
                                 {this.props.concept.full_explanation}
                             </Typography>
                         </Box>
 
                         <UnderstoodButton onClick={this.onUnderstoodClick}></UnderstoodButton>
+                    </Grid>
                     </Grid>
 
                 </Grid>
