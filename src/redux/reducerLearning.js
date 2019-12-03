@@ -47,7 +47,7 @@ const concepts = {
  Em Overcooked! é possivel remapear todos os controles do jogo, o que pode permitir vários jogadores com deficiencias motoras jogar o jogo.\
  \
  \n \n É aquela que propicia a implementação de recursos que posssam ampliar a quantidade de jogadores que podem experimentar o jogo.\",\
-        \"full_explanation\": [\"Exemplo que seguem esse pricipio: \
+        Exemplo que seguem esse pricipio: \
  \ "," 2) Playstation 4\
  Nesse console existe um menu de acessabilidade que permite entre outros:\
  \n \n a) Remapear botões \
