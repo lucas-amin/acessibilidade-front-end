@@ -37,8 +37,7 @@ class App extends Component {
                     <AppBarComponent></AppBarComponent>
                     <Switch>
                         <Route path={"/question"}>
-                            <QuestionComponent currentQuestion={this.state.currentQuestion}
-                                browserHistory={browserHistory}> </QuestionComponent>
+                            <QuestionComponent browserHistory={browserHistory}> </QuestionComponent>
                         </Route>
                         <Route path={"/concept"}>
                             <ConceptComponent browserHistory={browserHistory}/>

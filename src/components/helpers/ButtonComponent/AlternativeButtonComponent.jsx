@@ -14,7 +14,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function AlternativeButtons(props) {
     const classes = useStyles();
-    debugger;
 
     return (
         <div>

@@ -11,29 +11,37 @@ import {connect} from 'react-redux'
 import Box from '@material-ui/core/Box';
 
 class ConceptComponent extends React.Component {
+    constructor(){
+        super();
+        this.conceptCounter = 0
+    }
+
     componentDidMount() {
         //this.props.dispatch(action.setCurrentQuestion())
     }
 
     onUnderstoodClick = () => {
-        if (this.props.concept.id === 2) {
+        if (this.conceptCounter == this.props.concept.full_explanation.length - 1) {
             var lowerCaseTitle = this.props.concept.title.toLowerCase()
-            debugger
             this.props.dispatch(action.setCurrentQuestionType(lowerCaseTitle))
             this.props.browserHistory.push('/question')
-        }else{
+
+        } else {
             this.props.dispatch(action.setCurrentConceptExample())
         }
+        this.conceptCounter ++
     }
 
     render() {
+        debugger;
+
         return (
             <React.Fragment>
                 <CssBaseline/>
                 <Grid container direction="column" justify="center" alignItems="center" spacing={3}>
 
                     <Grid item>
-                        <h1 class='bigblue'> {this.props.concept.title + " " + this.props.concept.id}</h1>
+                        <h1 class='bigblue'> {this.props.concept.title + " " + this.props.concept.id + " " + this.props.concept.full_explanation.length}</h1>
                     </Grid>
 
                     <Grid item>
@@ -41,7 +49,7 @@ class ConceptComponent extends React.Component {
                             <Grid item xs={3}>
                             </Grid>
                             <Grid item xs={6}>
-                                <img class='responsive-img' alt="explanatory" src={this.props.concept.media}/>
+                                <img  class='responsive-img' alt="explanatory" src={this.props.concept.media}/>
                             </Grid>
                             <Grid item xs={3}>
                             </Grid>
@@ -51,13 +59,13 @@ class ConceptComponent extends React.Component {
                     <Grid container direction="row" justify="center" alignItems="center" spacing={3}>
                     <Grid xs={9} item>
                         <Box width={1} bgcolor="background.paper" p={4}>
-                            <Typography component="div" 
+                            <Typography component="div"
                             style={{backgroundColor: '#cfe8fc',
                                     whiteSpace: 'pre-line',
                                     width: '100%',
                                     fontSize: '2em'}}>
                                 {this.props.concept.intro} <br></br> <br></br>
-                                {this.props.concept.full_explanation}
+                                {this.props.concept.full_explanation[this.conceptCounter]}
                             </Typography>
                         </Box>
 
