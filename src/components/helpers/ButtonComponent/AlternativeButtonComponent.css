@@ -1,0 +1,12 @@
+.bigblue {
+  color: DodgerBlue;
+  padding: 3px;
+  font-family: Arial;
+}
+
+.alternative-button {
+    background: '#dfdfdf';
+    width: '80%',
+    fontSize: '1.5em',
+    fontWeight: 'bold'
+}

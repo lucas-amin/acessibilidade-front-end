@@ -22,7 +22,12 @@ export function setCurrentQuestionType(category) {
   }
 }
 
-
+export function setNextQuestion() {
+  return { 
+    type: 'UPDATE_NEXT_QUESTION',
+    payload: {}
+  }
+}
 
 // Concept actions
 
