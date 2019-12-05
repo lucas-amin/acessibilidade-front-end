@@ -60,7 +60,7 @@ class ConceptComponent extends React.Component {
                     <Grid xs={9} item>
                         <Box width={1} bgcolor="background.paper" p={4}>
                             <Typography component="div"
-                            style={{backgroundColor: '#cfe8fc',
+                            style={{backgroundColor: '#eeeeeee',
                                     whiteSpace: 'pre-line',
                                     width: '100%',
                                     fontSize: '2em'}}>

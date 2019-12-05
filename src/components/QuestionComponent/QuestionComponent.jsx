@@ -36,42 +36,50 @@ class QuestionComponent extends React.Component {
                                 <img className='responsive-img' alt="explanatory"
                                      src="https://cdn4.buysellads.net/uu/1/41312/1545083324-1539370929-mailchimp-Yellow-260x200.png"/>
                             </Grid>
-                            <Grid item xs={5}>
+                            <Grid item xs={4}>
                             </Grid>
                         </Grid>
                     </Grid>
 
-                    <Grid item>
+                    <Grid item xs={5}>
+                    </Grid>
+
+                    <Grid item xs={5}>
                         <h1> {this.props.currentQuestion.title} - {this.props.currentQuestion.category} </h1>
                     </Grid>
 
-                    <Grid item>
-                            <Typography variant='h5' component="div" align='center'
-                                        style={{backgroundColor: '#cfe8fc'}}>
-                                {this.props.currentQuestion.text}
-                            </Typography>
+                    <Grid item xs={5}>
                     </Grid>
 
-                    <Grid container spacing={3}>
-                        <Grid item xs={4}>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <Slider color="primary" {...this.settings}>
-                                <div>
-                                    <img className='responsive-img' alt="explanatory"
-                                         src="https://cdn4.buysellads.net/uu/1/41312/1545083324-1539370929-mailchimp-Yellow-260x200.png"/>
-                                </div>
-                                <div>
-                                    <img className='responsive-img' alt="explanatory"
-                                         src="https://cdn4.buysellads.net/uu/1/41312/1545083324-1539370929-mailchimp-Yellow-260x200.png"/>
-                                </div>
-                                <div>
-                                    <img className='responsive-img' alt="explanatory"
-                                         src="https://cdn4.buysellads.net/uu/1/41312/1545083324-1539370929-mailchimp-Yellow-260x200.png"/>
-                                </div>
-                            </Slider>
-                        </Grid>
-                        <Grid item xs={5}>
+                    <Grid item>
+                        <Typography variant='h5' component="div" align='center' color={'initial'}
+                                    style={{backgroundColor: '#eeeeeee'}}>
+                            {this.props.currentQuestion.text}
+                        </Typography>
+                    </Grid>
+
+                    <Grid item>
+                        <Grid container spacing={3}>
+                            <Grid item xs={4}>
+                            </Grid>
+                            <Grid item xs={4}>
+                                <Slider color="primary" {...this.settings}>
+                                    <div>
+                                        <img className='responsive-img' alt="explanatory"
+                                             src="https://cdn4.buysellads.net/uu/1/41312/1545083324-1539370929-mailchimp-Yellow-260x200.png"/>
+                                    </div>
+                                    <div>
+                                        <img className='responsive-img' alt="explanatory"
+                                             src="https://cdn4.buysellads.net/uu/1/41312/1545083324-1539370929-mailchimp-Yellow-260x200.png"/>
+                                    </div>
+                                    <div>
+                                        <img className='responsive-img' alt="explanatory"
+                                             src="https://cdn4.buysellads.net/uu/1/41312/1545083324-1539370929-mailchimp-Yellow-260x200.png"/>
+                                    </div>
+                                </Slider>
+                            </Grid>
+                            <Grid item xs={4}>
+                            </Grid>
                         </Grid>
                     </Grid>
 
