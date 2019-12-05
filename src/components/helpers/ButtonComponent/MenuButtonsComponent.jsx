@@ -6,7 +6,6 @@ import { IconButton } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     button: {
-        margin: theme.spacing(1),
     },
     input: {
         display: 'none',
