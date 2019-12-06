@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import * as action from './../../redux/actions'
 
+import SliderCarousel from '../helpers/SliderCarouselComponent/SliderCarouselComponent'
 import './ConceptComponent.css';
 import UnderstoodButton from './../helpers/ButtonComponent/ButtonComponent'
 
@@ -36,23 +37,26 @@ class ConceptComponent extends React.Component {
         return (
             <React.Fragment>
                 <CssBaseline/>
-                <Grid container direction="column" justify="center" alignItems="center" spacing={3}>
+                <Grid container direction="column" spacing={3}>
 
                     <Grid item>
                         <h1 class='bigblue'> {this.props.concept.title + " " + this.props.concept.id + " " + this.props.concept.full_explanation.length}</h1>
                     </Grid>
 
-                    <Grid item>
-                        <Grid container spacing={0}>
-                            <Grid item xs={3}>
+                    {(this.props.concept.images || this.props.concept.videos) ?
+                        <Grid item>
+                            <Grid container spacing={3} direction="row" justify="center" alignItems="center">
+                                <Grid item xs={10} md={6} lg={4} >
+                                    <SliderCarousel
+                                        images={this.props.concept.images ?
+                                                this.props.concept.images : []}
+                                        videos={this.props.concept.videos ?
+                                                this.props.concept.videos : []}>                                        
+                                    </SliderCarousel>
+                                </Grid>
                             </Grid>
-                            <Grid item xs={6}>
-                                <img  class='responsive-img' alt="explanatory" src={this.props.concept.media}/>
-                            </Grid>
-                            <Grid item xs={3}>
-                            </Grid>
-                        </Grid>
-                    </Grid>
+                        </Grid> : ""
+                    }
 
                     <Grid container direction="row" justify="center" alignItems="center" spacing={3}>
                     <Grid xs={9} item>

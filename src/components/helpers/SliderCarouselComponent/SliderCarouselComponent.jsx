@@ -10,12 +10,12 @@ const useStyles = makeStyles(theme => ({
 
 export default function SliderCarousel(props) {
   const classes = useStyles();
+  debugger
   return(
-    
     <Slider color="primary">
       {props.images.map((image, index) => {
         return (
-          <img className='responsive-img'
+          <img key={image.url} className='responsive-img'
             alt={image.alt}
             src={image.url}/>)
       })}
@@ -23,7 +23,7 @@ export default function SliderCarousel(props) {
       {props.videos.map((video, index) => {
         return (
           <div class="video-container">
-            <iframe width="560" height="315" 
+            <iframe width="750" height="450" 
                 src={video.url}
                 alt={video.alt}
                 frameBorder="0"

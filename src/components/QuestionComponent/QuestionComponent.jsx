@@ -48,19 +48,22 @@ class QuestionComponent extends React.Component {
                             {this.props.currentQuestion.question}
                         </Typography>
                     </Grid>
-
-                    <Grid item>
-                        <Grid container spacing={3} direction="row" justify="center" alignItems="center">
-                            <Grid item xs={10} md={6} lg={4} >
-                                <SliderCarousel
-                                    images={this.props.currentQuestion.images ?
-                                            this.props.currentQuestion.images : []}
-                                    videos={this.props.currentQuestion.videos ?
-                                            this.props.currentQuestion.videos : []}>                                        
-                                </SliderCarousel>
+                    
+                    {(this.props.currentQuestion.images || this.props.currentQuestion.videos) ?
+                        <Grid item>
+                            <Grid container spacing={3} direction="row" justify="center" alignItems="center">
+                                <Grid item xs={10} md={6} lg={4} >
+                                    <SliderCarousel
+                                        images={this.props.currentQuestion.images ?
+                                                this.props.currentQuestion.images : []}
+                                        videos={this.props.currentQuestion.videos ?
+                                                this.props.currentQuestion.videos : []}>                                        
+                                    </SliderCarousel>
+                                </Grid>
                             </Grid>
-                        </Grid>
-                    </Grid>
+                        </Grid> 
+                        : ""
+                    }
 
                     <Grid item>
                         <AlternativeButtons 
