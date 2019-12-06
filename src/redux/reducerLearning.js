@@ -5,7 +5,7 @@ const defaultState = {
     "category": "Narrativa",
     "intro": "Apresenta histórias e experiências que possam representar a diversidade que existe no mundo, de modo que os jogadores não se sintam excluídos ou estereotipados.",
     // eslint-disable-next-line
-    "full_explanation": ["\
+    "full_explanation": [   "\
   Exemplos de jogos que seguem esse pridsadsadscipio: \n \
   \
   \n 1) Mass Effect \n \
@@ -24,6 +24,7 @@ const concepts = {
         "media": "https://www.dreamhost.com/blog/wp-content/uploads/2016/08/DreamHost-Accessibility-Tips-750x498.jpg",
         "category": "Narrativa",
         "intro": "Apresenta histórias e experiências que possam representar a diversidade que existe no mundo, de modo que os jogadores não se sintam excluídos ou estereotipados.",
+        "images": [{"url": "https://1.bp.blogspot.com/-xdhe5bh_PfU/XPpduTXkJ8I/AAAAAAAACzI/1RGl5P2JvE8FU4Q74aVh9T1aSp0KqBLGgCLcBGAs/s320/X_MMXLC1.png", "alt": "Megaman X: com o menino ciborgue"},{"url": "https://img.elo7.com.br/product/zoom/2570828/big-poster-gamer-batman-arkham-knight-lo04-tam-90x60-cm.jpg", "alt": "Batman o super herói"}, {"url": "https://www.writeups.org/wp-content/uploads/Joker-Mass-Effect-2-Jeff-Moreau-a.jpg", "alt": "Jeff 'Joker' Moreau - Personagem do jogo Mass Effect com síndrome que causa extrema fragilidade nos ossos"},{"url": "https://vignette.wikia.nocookie.net/witcher/images/a/a0/Tw3_Geralt_of_Rivia_newest_render.png/revision/latest?cb=20170606064646", "alt": "Witcher 3: Geralt of Rivia"}],
         // eslint-disable-next-line
         "full_explanation": ["\
   Exemplos de jogos que seguem esse principio: \n \
