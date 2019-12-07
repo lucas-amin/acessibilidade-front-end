@@ -9,6 +9,7 @@ import './QuestionComponent.css'
 import AlternativeButtons from '../helpers/ButtonComponent/AlternativeButtonComponent'
 import Grid from "@material-ui/core/Grid";
 import {connect} from 'react-redux'
+import * as action from './../../redux/actions'
 
 const {red, blue, green} = require('@material-ui/core/colors');
 const Button = require('@material-ui/core/Button').default;
@@ -20,7 +21,14 @@ class QuestionComponent extends React.Component {
     }
 
     rightAnswerClick = () => {
-        this.props.browserHistory.push('')
+        debugger
+        if(this.props.currentQuestion.currentIndex + 1 >=
+           this.props.currentQuestion.questionsLength){
+            this.props.browserHistory.push('');
+        }else{
+            this.props.dispatch(action.setNextQuestion())
+        }
+
     }
 
     render() {
@@ -43,7 +51,6 @@ class QuestionComponent extends React.Component {
                         <Grid container spacing={3} direction="row" justify="center" alignItems="center">
                             <Grid item xs={10} md={6} lg={4} >
                                 <Slider color="primary" {...this.settings}>
-
                                         <img className='responsive-img' alt="explanatory"
                                              src="https://cdn4.buysellads.net/uu/1/41312/1545083324-1539370929-mailchimp-Yellow-260x200.png"/>
                                              
