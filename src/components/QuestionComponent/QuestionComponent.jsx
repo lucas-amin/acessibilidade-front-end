@@ -50,23 +50,25 @@ class QuestionComponent extends React.Component {
                     <Grid item>
                         <Grid container spacing={3} direction="row" justify="center" alignItems="center">
                             <Grid item xs={10} md={6} lg={4} >
-                                <Slider color="primary" {...this.settings}>
-                                        <img className='responsive-img' alt="explanatory"
-                                             src="https://cdn4.buysellads.net/uu/1/41312/1545083324-1539370929-mailchimp-Yellow-260x200.png"/>
-                                             
-                                        <div class="video-container">
-                                            <iframe width="560" height="315" 
-                                                src="https://www.youtube.com/embed/_TyJeKKQh-s?controls=0"
-                                                frameborder="0"
-                                                allow="accelerometer; autoplay;
-                                                    encrypted-media; gyroscope;
-                                                    picture-in-picture"
-                                                allowfullscreen>
-                                            </iframe>
-                                        </div>
-                                        <img className='responsive-img' alt="explanatory"
-                                             src="https://cdn4.buysellads.net/uu/1/41312/1545083324-1539370929-mailchimp-Yellow-260x200.png"/>
-                                </Slider>
+                                <div class="slider-container">
+                                    <Slider color="primary" {...this.settings}>
+                                            <img className='responsive-img' alt="explanatory"
+                                                src="https://cdn4.buysellads.net/uu/1/41312/1545083324-1539370929-mailchimp-Yellow-260x200.png"/>
+                                                
+                                            <div class="video-container">
+                                                <iframe width="560" height="315" 
+                                                    src="https://www.youtube.com/embed/_TyJeKKQh-s?controls=0"
+                                                    frameBorder="0"
+                                                    allow="accelerometer; autoplay;
+                                                        encrypted-media; gyroscope;
+                                                        picture-in-picture"
+                                                    allowFullScreen>
+                                                </iframe>
+                                            </div>
+                                            <img className='responsive-img' alt="explanatory"
+                                                src="https://cdn4.buysellads.net/uu/1/41312/1545083324-1539370929-mailchimp-Yellow-260x200.png"/>
+                                    </Slider>
+                                </div>
                             </Grid>
                         </Grid>
                     </Grid>

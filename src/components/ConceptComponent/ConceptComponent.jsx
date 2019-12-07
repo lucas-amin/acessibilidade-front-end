@@ -33,8 +33,6 @@ class ConceptComponent extends React.Component {
     }
 
     render() {
-        debugger;
-
         return (
             <React.Fragment>
                 <CssBaseline/>
