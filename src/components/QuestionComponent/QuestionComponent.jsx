@@ -93,7 +93,7 @@ class QuestionComponent extends React.Component {
                                 </Grid>
                             </Grid>
                         </Grid> 
-                        : ""
+                        : (<div></div>)
                     }
 
                     <Grid item>

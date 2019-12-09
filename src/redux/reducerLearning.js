@@ -19,22 +19,12 @@ const defaultState = {
 
 const concepts = {
     "narrativa": {
-        "id": 0,
-        "title": "Narrativa",
-        "media": "https://www.dreamhost.com/blog/wp-content/uploads/2016/08/DreamHost-Accessibility-Tips-750x498.jpg",
-        "category": "Narrativa",
-        "intro": "Apresenta histórias e experiências que possam representar a diversidade que existe no mundo, de modo que os jogadores não se sintam excluídos ou estereotipados.",
-        "images": [{"url": "https://1.bp.blogspot.com/-xdhe5bh_PfU/XPpduTXkJ8I/AAAAAAAACzI/1RGl5P2JvE8FU4Q74aVh9T1aSp0KqBLGgCLcBGAs/s320/X_MMXLC1.png", "alt": "Megaman X: com o menino ciborgue"},{"url": "https://img.elo7.com.br/product/zoom/2570828/big-poster-gamer-batman-arkham-knight-lo04-tam-90x60-cm.jpg", "alt": "Batman o super herói"}, {"url": "https://www.writeups.org/wp-content/uploads/Joker-Mass-Effect-2-Jeff-Moreau-a.jpg", "alt": "Jeff 'Joker' Moreau - Personagem do jogo Mass Effect com síndrome que causa extrema fragilidade nos ossos"},{"url": "https://vignette.wikia.nocookie.net/witcher/images/a/a0/Tw3_Geralt_of_Rivia_newest_render.png/revision/latest?cb=20170606064646", "alt": "Witcher 3: Geralt of Rivia"}],
-        "full_explanation": ["\
-  Exemplos de jogos que seguem esse principio: \n \
-  \
-  \n 1) Mass Effect \n \
-  Em Mass Effect o personagem Jeff “Joker” Moreau tem um caso moderado a grave da síndrome de Vrolik (Osteogenesis imperfecta), que causa extrema fragilidade nos ossos; ele nasceu com fraturas graves nas pernas e, mesmo com a medicina moderna, acha quase impossível andar, contando com muletas e aparelhos para as pernas.\
-  \ "
-            , "  Exemplos de jogos que seguem esse principio: \n \
- \n 2) Grand Theft Auto V \n \
-  Em GTA 5 o personagem Lester Crest sofre de uma doença devastadora que gradualmente desgastou suas habilidades motoras durante sua vida e o deixou em cadeira de rodas.\
-   Devido à sua mobilidade limitada, Lester cresceu consideravelmente acima do peso e também sofre de asma."]},
+            "id": 0,
+            "title": "Narrativa",
+            "category": "Narrativa",
+            "full_explanation": ["Apresenta histórias e experiências que possam representar a diversidade que existe no mundo, de modo que os jogadores não se sintam excluídos ou estereotipados."],
+            images: [{"url": "https://i.pinimg.com/originals/05/c4/3c/05c43cc7386154f5877ec3e918913381.jpg", alt:"Personagem Lester do jogo Grand Thief "}, {"url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQBwelAdZkGlmIja5urR5TSEGv9SdZEa6I7zHyk_NF0sqaou1UO", "alt": "Personagem Junkrat do jogo Overwatch"}]
+        },
     "tecnologia": {
         "id": 1,
         "media": "https://pbs.twimg.com/media/DgJyJ_cUYAAARAs.png",
@@ -59,6 +49,7 @@ const concepts = {
     "regras": {
             "id": 2,
             "title": "Regras",
+            "videos": [{"url": "https://www.youtube.com/embed/tW2KUxyq8Vg", "alt": "Trailer do jogo Monument Valley 2"}],
             "full_explanation": ["Não criam impedimentos para que os jogadores com deficiência possam experimentar o jogo e manter o mundo do jogo consistente",
             "Exemplo que seguem esse pricipio: \n \
             \n \
@@ -69,12 +60,20 @@ const concepts = {
     "objetivos":{
         "id": 3,
         "title": "Objetivos",
+        "images": [{"url": "http://editoralabrador.com.br/blog/wp-content/uploads/Capa-Qual-meu-Objetivo.png", "alt": "Desenho de um alvo com flechas representando objetivos."}],
         "full_explanation": ["São desafiadores para pessoas com diferentes características física, motoras, cognitivas, sociais, economicas e culturais."] 
     },
     "mecanicas":{
         "id": 4,
-        "title": "Mecânicas",
+        "title": "Mecanicas",
+        "images": [{"url": "https://www.fabricadejogos.net/wp/wp-content/uploads/2016/06/Sem-t%C3%ADtulo.png", "alt": "Engrenagens para representando mecânica."}],
         "full_explanation": ["Propiciam aos jogadores diversas maneiras de realizar ações no mundo do jogo, sem que essas ações ofereçam benefícios ou dificuldades extras."]
+    },
+    "evas":{
+        "id": 4,
+        "title": "evas",
+        "images": [{"url": "http://www.androidnova.org/wp-content/uploads/2017/06/future-770x430.jpg", "alt": "imagem ilustrando sentidos humanos"}],
+        "full_explanation": ["Elementos Visuais Aurais e Hápticos (E.V.A.Hs) Promovem a utilização de recursos de modo que os jogadores não dependam de apenas uma pra jogar, não sejam prejudicados caso não possam usar uma deles e não sejam favorecidos caso possam utilizar todos esses recursos."]
     }
 }
 
@@ -85,7 +84,6 @@ export const reducerLearning = function (state = defaultState, action) {
     if (action.type === "UPDATE_CONCEPT") {
         currentConcept.id = action.payload.id;
         currentConcept.title = action.payload.title;
-        currentConcept.media = action.payload.media;
         currentConcept.category = action.payload.category;
         currentConcept.intro = action.intro;
         currentConcept.full_explanation = action.full_explanation;
