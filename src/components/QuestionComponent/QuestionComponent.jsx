@@ -99,13 +99,23 @@ class QuestionComponent extends React.Component {
                     <Grid item>
                         <AlternativeButtons
                             onClick={this.onClick}
-                            alternatives={this.props.currentQuestion.alternatives}>
+                            alternatives={this.props.currentQuestion.alternatives}
+                            show_answer={this.state.open ? true : false}
+                            correct_answer={this.props.currentQuestion.correct_answer}>
                         </AlternativeButtons>
                     </Grid>
 
                     <div className="App">
                         <Dialog open={this.state.open} >
-                            <DialogTitle>{this.state.answer_result}</DialogTitle>
+                            {this.state.answer_result == 'Resposta Incorreta'?
+                                <DialogTitle style={{color: 'red'}}>
+                                    {this.state.answer_result}
+                                </DialogTitle>
+                                :
+                                <DialogTitle style={{color: 'green'}}>
+                                    {this.state.answer_result}
+                                </DialogTitle>                              
+                            }
                             <DialogContent>{this.state.justification}</DialogContent>
                             <DialogActions>
                                 <Button onClick={this.closeDialog} >Ok</Button>
