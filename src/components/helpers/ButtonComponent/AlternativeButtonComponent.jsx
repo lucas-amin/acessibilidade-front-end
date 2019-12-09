@@ -24,7 +24,7 @@ export default function AlternativeButtons(props) {
             {props.alternatives.map((element, index) => {
                 return(
                     <Grid key={index} item xs={12} md={6} xl={3}>
-                        <Button onClick={props.onClick} variant="contained" color="default"
+                        <Button onClick={ () => props.onClick(index)} variant="contained" color="default"
                                 className={classes.button}>
                             {element}
                         </Button>

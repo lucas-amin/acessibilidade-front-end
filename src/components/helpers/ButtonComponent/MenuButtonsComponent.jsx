@@ -16,7 +16,7 @@ export default function MenuButtons(props) {
     const classes = useStyles();
     return (
         <div>
-            <Grid container direction="row" justify="space-around" alignItems="center" spacing={1}>
+            <Grid container direction="row" justify="space-around" alignItems="center" spacing={6}>
                 <Grid item >
                     <IconButton onClick={() => props.onClick("narrativa")} variant="contained" color="default"
                             style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
@@ -53,7 +53,7 @@ export default function MenuButtons(props) {
                     <IconButton onClick={props.onClick} variant="contained" color="default"
                                 style={{backgroundColor: '#dfdfdf', height: '30vh', width: '30vh'}}
                                 className={classes.button}>
-                        Tecnologia
+                        Tecnologiamal
                     </IconButton>
                 </Grid>
                 <Grid item >

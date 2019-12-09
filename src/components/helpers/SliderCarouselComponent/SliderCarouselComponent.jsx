@@ -10,7 +10,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function SliderCarousel(props) {
   const classes = useStyles();
-  debugger
   return(
     <Slider color="primary">
       {props.images.map((image, index) => {

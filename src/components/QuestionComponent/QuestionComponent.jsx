@@ -12,24 +12,62 @@ import Grid from "@material-ui/core/Grid";
 import {connect} from 'react-redux'
 import * as action from './../../redux/actions'
 
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 const {red, blue, green} = require('@material-ui/core/colors');
 const Button = require('@material-ui/core/Button').default;
 
 class QuestionComponent extends React.Component {
     constructor() {
         super();
-        this.settings = {};
+    }
+
+    state = {
+        open: false
+    };
+
+    openDialog() {
+        this.setState({ open: true });
+
+    }
+
+    closeDialog = () =>  {
+        this.setState({ open: false })
+
+        if(this.state.answer_result == "Resposta errada"){
+            this.props.browserHistory.push('');
+        } else {
+            if(this.props.currentQuestion.currentIndex + 1 >= this.props.currentQuestion.questionsLength){
+                this.props.browserHistory.push('');
+            } else {
+                this.props.dispatch(action.setNextQuestion())
+            }
+        }
     }
 
     rightAnswerClick = () => {
-        debugger
-        if(this.props.currentQuestion.currentIndex + 1 >=
-           this.props.currentQuestion.questionsLength){
-            this.props.browserHistory.push('');
-        }else{
-            this.props.dispatch(action.setNextQuestion())
-        }
+        this.setState({answer_result: "Resposta correta"})
+        this.setState( {justification: this.props.currentQuestion.justify_answer})
 
+        this.openDialog()
+    }
+
+    wrongAnswerClick = () => {
+        this.setState({answer_result: "Resposta errada"})
+        this.setState( {justification: this.props.currentQuestion.justify_answer})
+
+        this.openDialog()
+    }
+
+    onClick = (index) => {
+        if(this.props.currentQuestion.correct_answer == index) {
+            this.rightAnswerClick()
+        } else {
+            this.wrongAnswerClick()
+        }
     }
 
     render() {
@@ -48,7 +86,6 @@ class QuestionComponent extends React.Component {
                             {this.props.currentQuestion.question}
                         </Typography>
                     </Grid>
-                    
                     {(this.props.currentQuestion.images || this.props.currentQuestion.videos) ?
                         <Grid item>
                             <Grid container spacing={3} direction="row" justify="center" alignItems="center">
@@ -66,11 +103,21 @@ class QuestionComponent extends React.Component {
                     }
 
                     <Grid item>
-                        <AlternativeButtons 
-                            onClick={this.rightAnswerClick}
+                        <AlternativeButtons
+                            onClick={this.onClick}
                             alternatives={this.props.currentQuestion.alternatives}>
                         </AlternativeButtons>
                     </Grid>
+
+                    <div className="App">
+                        <Dialog open={this.state.open} >
+                            <DialogTitle>{this.state.answer_result}</DialogTitle>
+                            <DialogContent>{this.state.justification}</DialogContent>
+                            <DialogActions>
+                                <Button onClick={this.closeDialog} >Ok</Button>
+                            </DialogActions>
+                        </Dialog>
+                    </div>
 
                 </Grid>
             </React.Fragment>
