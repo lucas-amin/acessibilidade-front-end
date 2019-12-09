@@ -37,27 +37,27 @@ export default function MenuButtons(props) {
                     </IconButton>
                 </Grid>
                 <Grid item variant='contained' component="div" align='center' color={'initial'} xs={12} md={6} xl={4}>
-                    <IconButton onClick={props.onClick}  variant="contained"
+                    <IconButton onClick={() => props.onClick("mecanicas")}  variant="contained"
                             className={classes.button}>
-                        Mecanicas
+                        Mecânicas
                     </IconButton>
                 </Grid>
                 <Grid item variant='contained' component="div" align='center' color={'initial'} xs={12} md={6} xl={3}>
-                    <IconButton onClick={props.onClick}  variant="contained"
+                    <IconButton onClick={() => props.onClick("objetivos")}  variant="contained"
                             className={classes.button}>
                         Objetivos
                     </IconButton>
                 </Grid>
 
                 <Grid item variant='contained' component="div" align='center' color={'initial'} xs={12} md={6} xl={3}>
-                    <IconButton onClick={props.onClick}  variant="contained"
+                    <IconButton onClick={() => props.onClick("regras")}  variant="contained"
                                 style={{backgroundColor: '#dfdfdf', height: '38vh', width: '38vh'}}
                                 className={classes.button}>
                         Regras
                     </IconButton>
                 </Grid>
                 <Grid item variant='contained' component="div" align='center' color={'initial'} xs={12} md={6} xl={3}>
-                    <IconButton onClick={props.onClick}  variant="contained"
+                    <IconButton onClick={() => props.onClick("evas")}  variant="contained"
                                 style={{backgroundColor: '#dfdfdf', height: '38vh', width: '38vh'}}
                                 className={classes.button}>
                         Elementos visuais (E.V.A.Hs)

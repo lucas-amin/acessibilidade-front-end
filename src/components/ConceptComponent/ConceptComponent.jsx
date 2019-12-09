@@ -40,7 +40,7 @@ class ConceptComponent extends React.Component {
                 <Grid container direction="column" spacing={3}>
 
                     <Grid item>
-                        <h1 class='bigblue'> {this.props.concept.title + " " + this.props.concept.id + " " + this.props.concept.full_explanation.length}</h1>
+                        <h1 class='bigblue'> {this.props.concept.title}</h1>
                     </Grid>
 
                     {(this.props.concept.images || this.props.concept.videos) ?
@@ -66,7 +66,6 @@ class ConceptComponent extends React.Component {
                                     whiteSpace: 'pre-line',
                                     width: '100%',
                                     fontSize: '2em'}}>
-                                {this.props.concept.intro} <br></br> <br></br>
                                 {this.props.concept.full_explanation[this.conceptCounter]}
                             </Typography>
                         </Box>

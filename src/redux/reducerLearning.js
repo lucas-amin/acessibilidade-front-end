@@ -25,7 +25,6 @@ const concepts = {
         "category": "Narrativa",
         "intro": "Apresenta histórias e experiências que possam representar a diversidade que existe no mundo, de modo que os jogadores não se sintam excluídos ou estereotipados.",
         "images": [{"url": "https://1.bp.blogspot.com/-xdhe5bh_PfU/XPpduTXkJ8I/AAAAAAAACzI/1RGl5P2JvE8FU4Q74aVh9T1aSp0KqBLGgCLcBGAs/s320/X_MMXLC1.png", "alt": "Megaman X: com o menino ciborgue"},{"url": "https://img.elo7.com.br/product/zoom/2570828/big-poster-gamer-batman-arkham-knight-lo04-tam-90x60-cm.jpg", "alt": "Batman o super herói"}, {"url": "https://www.writeups.org/wp-content/uploads/Joker-Mass-Effect-2-Jeff-Moreau-a.jpg", "alt": "Jeff 'Joker' Moreau - Personagem do jogo Mass Effect com síndrome que causa extrema fragilidade nos ossos"},{"url": "https://vignette.wikia.nocookie.net/witcher/images/a/a0/Tw3_Geralt_of_Rivia_newest_render.png/revision/latest?cb=20170606064646", "alt": "Witcher 3: Geralt of Rivia"}],
-        // eslint-disable-next-line
         "full_explanation": ["\
   Exemplos de jogos que seguem esse principio: \n \
   \
@@ -56,9 +55,29 @@ const concepts = {
  \n c) Dar zoom durrante o jogo\
  \n d) Inverter cores\
  \n e) Aumentar texto\
- "]
+ "] },
+    "regras": {
+            "id": 2,
+            "title": "Regras",
+            "full_explanation": ["Não criam impedimentos para que os jogadores com deficiência possam experimentar o jogo e manter o mundo do jogo consistente",
+            "Exemplo que seguem esse pricipio: \n \
+            \n \
+            O jogo Monument Valley  \n \
+            Nesse jogo não há regras relacionadas à tempo para completar as fases, portanto jogadores que possuem algum tipo de dificuldade na velocidade do jogo consegue joga-lo completamente sem nenhuma regra o frustrando."
+            ]
+        },
+    "objetivos":{
+        "id": 3,
+        "title": "Objetivos",
+        "full_explanation": ["São desafiadores para pessoas com diferentes características física, motoras, cognitivas, sociais, economicas e culturais."] 
+    },
+    "mecanicas":{
+        "id": 4,
+        "title": "Mecânicas",
+        "full_explanation": ["Propiciam aos jogadores diversas maneiras de realizar ações no mundo do jogo, sem que essas ações ofereçam benefícios ou dificuldades extras."]
     }
 }
+
 
 export const reducerLearning = function (state = defaultState, action) {
     let currentConcept = {};
