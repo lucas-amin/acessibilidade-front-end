@@ -22,11 +22,22 @@ export function setCurrentQuestionType(category) {
   }
 }
 
-export function setNextQuestion() {
-  return { 
-    type: 'UPDATE_NEXT_QUESTION',
-    payload: {}
+export function setNextQuestion(correct_alternative) {
+  debugger
+  if(correct_alternative){
+    debugger
+    return { 
+      type: 'UPDATE_NEXT_QUESTION',
+      payload: {}
+    }
+  } else{
+    debugger
+    return { 
+      type: 'INCORRECT_ALTERNATIVE_UPDATE_NEXT_QUESTION',
+      payload: {}
+    }
   }
+
 }
 
 // Concept actions

@@ -19,7 +19,7 @@ class MenuComponent extends React.Component {
         return (
             <React.Fragment>
                 <CssBaseline/>
-                <h1 class='bigblue'> Menu principal</h1>
+                <h1 class='bigblue'> Menu Principal</h1>
                 <MenuButtons onClick={this.onUnderstoodClick} concepts={this.props.concepts}></MenuButtons>
             </React.Fragment>
         )

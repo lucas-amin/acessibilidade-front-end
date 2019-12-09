@@ -10,6 +10,14 @@
   height: auto;
 }
 
+.wrong-answer-popup {
+  color: red;
+}
+
+.correct-answer-popup {
+  color: green;
+}
+
 .video-container {
   position: relative;
   padding-bottom: 100%; /* Same size as image */  

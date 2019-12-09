@@ -68,5 +68,20 @@ export const reducerQuestion = function (state = currentQuestion, action) {
         return currentQuestion;
       }
 
+      if (action.type === "INCORRECT_ALTERNATIVE_UPDATE_NEXT_QUESTION"){
+        // Re-inserting the question in the array since the user did not select the correct option
+        debugger
+        questions[currentQuestionCategory].push(questions[currentQuestionCategory][currentQuestionIndex])
+        debugger
+        currentQuestion = {}
+        currentQuestionIndex++;
+        Object.assign(currentQuestion, questions[currentQuestionCategory][currentQuestionIndex])
+        currentQuestion['currentIndex'] = currentQuestionIndex
+        currentQuestion['questionsLength'] = questions[currentQuestionCategory].length
+        currentQuestion['category'] = currentQuestionCategory
+        return currentQuestion;
+      }
+
+      
     return currentQuestion;
 }

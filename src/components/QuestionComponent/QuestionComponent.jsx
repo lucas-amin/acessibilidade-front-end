@@ -31,26 +31,26 @@ class QuestionComponent extends React.Component {
     closeDialog = () =>  {
         this.setState({ open: false })
 
-        if(this.state.answer_result == "Resposta errada"){
-            this.props.browserHistory.push('');
+        if(this.state.answer_result == "Resposta Incorreta"){
+            this.props.dispatch(action.setNextQuestion(false))
         } else {
             if(this.props.currentQuestion.currentIndex + 1 >= this.props.currentQuestion.questionsLength){
                 this.props.browserHistory.push('');
             } else {
-                this.props.dispatch(action.setNextQuestion())
+                this.props.dispatch(action.setNextQuestion(true))
             }
         }
     }
 
     rightAnswerClick = () => {
-        this.setState({answer_result: "Resposta correta"})
+        this.setState({answer_result: "Resposta Correta"})
         this.setState( {justification: this.props.currentQuestion.justify_answer})
 
         this.openDialog()
     }
 
     wrongAnswerClick = () => {
-        this.setState({answer_result: "Resposta errada"})
+        this.setState({answer_result: "Resposta Incorreta"})
         this.setState( {justification: this.props.currentQuestion.justify_answer})
 
         this.openDialog()
