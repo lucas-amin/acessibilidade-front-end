@@ -1,9 +1,5 @@
 import React from "react";
-import Slider from 'infinite-react-carousel';
-import {Slide} from '@material-ui/core';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 import '../../style.css';
 import './QuestionComponent.css'
 import AlternativeButtons from '../helpers/ButtonComponent/AlternativeButtonComponent'
@@ -15,9 +11,7 @@ import * as action from './../../redux/actions'
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-const {red, blue, green} = require('@material-ui/core/colors');
 const Button = require('@material-ui/core/Button').default;
 
 class QuestionComponent extends React.Component {
