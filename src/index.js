@@ -34,7 +34,7 @@ class App extends Component {
         return (
             <Router history={browserHistory}>
                 <Provider store={store}>
-                    <AppBarComponent></AppBarComponent>
+                    <AppBarComponent browserHistory={browserHistory}></AppBarComponent>
                     <Switch>
                         <Route path={"/question"}>
                             <QuestionComponent browserHistory={browserHistory}> </QuestionComponent>

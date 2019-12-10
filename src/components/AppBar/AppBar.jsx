@@ -17,21 +17,18 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
+    cursor: 'pointer',
   },
 }));
 
-export default function AppBarComponent() {
+export default function AppBarComponent(props) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <AppBar link="/" position="static">
         <Toolbar>
-        
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography href="/" variant="h6" className={classes.title}>
+          <Typography onClick={() => props.browserHistory.push('/')} variant="h6" className={classes.title}>
             Gaming Acessível
           </Typography>
         </Toolbar>

@@ -52,7 +52,7 @@ const questions = {
         title: "Questão 1",
         question: "No jogo Spider-man (2018) é possivel desabilitar os quick time events (Momentos onde o jogador tem que apertar o mesmo botão várias vezes em um curto espaço de tempo), trocando-os por apenas segurar uma tecla. Isso é um exemplo de ______ inclusiva",
         alternatives: ["Regra","Mecânica","Narrativa","Tecnologia"],
-        correct_answer: 1 ,
+        correct_answer: 0 ,
         videos: [{"url":"https://www.youtube.com/embed/wfBiGDcdA9M", "alt": "QTE's de Spider Man"}],
         justify_answer: "Regra, pois é uma condição de vitória que pode ser mudada em virtude da necessidade do jogador."
     },{
